@@ -78,14 +78,78 @@
 
 #show__header:checked + .header {
   left: 0;
+  top: 0px;
+  opacity: 1;
+}
+
+#show__header:checked + .header .header__nav_item {
+  opacity: 1;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 }
 
 .header {
   left: -100vw;
   width: 100vw;
   height: 100px;
-  background-color: #daa520;
+  background-color: #0000004f;
   position: fixed;
+  top: -30px;
+  opacity: 0.5;
+  /*transition: all 0.5s;*/
+  -webkit-transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header__nav {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav_item {
+  background: #ffffff;
+  width: 150px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-animation-name: toggle;
+          animation-name: toggle;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  /*& .item__logo{
+                width: 20px;
+                height: 20px;
+                background-color: crimson;
+                
+            }*/
 }
 
 .wrapper__block {
@@ -95,5 +159,23 @@
 
 .wrapper__block:nth-child(even) {
   background: #ffffff;
+}
+
+@-webkit-keyframes toggle {
+  form {
+    width: 0px;
+  }
+  to {
+    width: 150px;
+  }
+}
+
+@keyframes toggle {
+  form {
+    width: 0px;
+  }
+  to {
+    width: 150px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
